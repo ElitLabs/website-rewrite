@@ -7,7 +7,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
 	return (
 		<ThemeProvider attribute='class'>
 			<Toaster />
+			{children}
 		</ThemeProvider>
 	);
 }
-('use client');
