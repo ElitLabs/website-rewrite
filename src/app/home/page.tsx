@@ -4,23 +4,24 @@ import Image from 'next/image';
 import laptop from '@/assets/images/laptop.webp';
 import elitlabs from '@/../public/images/elitlabsicon.png';
 import Navbar from '@/components/navbar';
+import { Button } from '@/components/shadcn/ui/button';
 export default function Homepage() {
 	return (
 		<div>
 			<Navbar />
-			<section className='w-full py-12 md:py-24 lg:py-32'>
+			<section className='w-full py-12 md:py-24 lg:py-40 lg:mt-14'>
 				<div className='container grid items-center gap-6 px-4 md:px-6 lg:px-20 lg:grid-cols-2 lg:gap-10'>
 					<div className='space-y-4'>
 						<h1 className='text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl'>
 							Rethinking the Way People Learn to Code
 						</h1>
 						<p className='max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed'>
-							Explore our library of courses and learn at your own
-							pace. From beginner to advanced, we&apos;ve got you
-							covered.
+							We are a small group of passionate developers with
+							the mission of teaching people in ways that are
+							intuitive, realistic, and fun.
 						</p>
-						<div className='flex flex-col gap-2 min-[400px]:flex-row'>
-							<Link
+						<div className='flex flex-col gap-3 min-[400px]:flex-row'>
+							{/* <Link
 								href='#'
 								className='inline-flex h-10 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50'
 								prefetch={false}
@@ -33,7 +34,11 @@ export default function Homepage() {
 								prefetch={false}
 							>
 								Get Started
-							</Link>
+							</Link> */}
+							<Button size={'xl'}>Browse Courses</Button>
+							<Button size={'xl'} variant={'outline'}>
+								Get Started
+							</Button>
 						</div>
 					</div>
 					<Image
@@ -113,6 +118,43 @@ export default function Homepage() {
 							</div>
 						</div>
 					</div>
+				</div>
+			</section>
+			<section className='w-full py-12 md:py-24 lg:py-40 lg:mt-14'>
+				<div className='container grid items-center gap-6 px-4 md:px-6 lg:px-20 lg:grid-cols-2 lg:gap-10'>
+					<div className='space-y-4'>
+						<h1 className='text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl'>
+							Rethinking the Way People Learn to Code
+						</h1>
+						<p className='max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed'>
+							Explore our library of courses and learn at your own
+							pace. From beginner to advanced, we&apos;ve got you
+							covered.
+						</p>
+						<div className='flex flex-col gap-2 min-[400px]:flex-row'>
+							<Link
+								href='#'
+								className='inline-flex h-10 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50'
+								prefetch={false}
+							>
+								Browse Courses
+							</Link>
+							<Link
+								href='#'
+								className='inline-flex h-10 items-center justify-center rounded-md border border-input bg-background px-8 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50'
+								prefetch={false}
+							>
+								Get Started
+							</Link>
+						</div>
+					</div>
+					<Image
+						src={laptop}
+						width='550'
+						height='550'
+						alt='Hero'
+						className='mx-auto overflow-hidden rounded-xl object-cover object-center sm:w-full lg:w-[80%] lg:order-last'
+					/>
 				</div>
 			</section>
 		</div>
