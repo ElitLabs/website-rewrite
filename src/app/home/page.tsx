@@ -3,9 +3,11 @@ import Image from 'next/image';
 
 import laptop from '@/assets/images/laptop.webp';
 import elitlabs from '@/../public/images/elitlabsicon.png';
+import Navbar from '@/components/navbar';
 export default function Homepage() {
 	return (
 		<div>
+			<Navbar />
 			<section className='w-full py-12 md:py-24 lg:py-32'>
 				<div className='container grid items-center gap-6 px-4 md:px-6 lg:px-20 lg:grid-cols-2 lg:gap-10'>
 					<div className='space-y-4'>
@@ -55,7 +57,7 @@ export default function Homepage() {
 							</h2>
 						</div>
 					</div>
-					<div className='mx-auto grid grid-cols-1 gap-6 py-12 sm:grid-cols-2 md:grid-cols-3 lg:max-w-5xl'>
+					<div className='mx-auto grid grid-cols-1 gap-6 py-12 sm:grid-cols-2 md:grid-cols-3 lg:max-w-6xl'>
 						<div className='group overflow-hidden rounded-xl bg-card shadow-sm transition-all hover:shadow-md'>
 							<Image
 								src={elitlabs}
@@ -69,8 +71,8 @@ export default function Homepage() {
 									Introduction to React.js
 								</h3>
 								<p className='text-muted-foreground'>
-									Dive deep into the React library and learn
-									to build complex web applications.
+									Learn the fundamentals of React and build
+									your first web application.
 								</p>
 							</div>
 						</div>
