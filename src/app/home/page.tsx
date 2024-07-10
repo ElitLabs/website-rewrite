@@ -10,7 +10,7 @@ export default function Homepage() {
 		<div>
 			<Navbar />
 			<section className='w-full py-12 md:py-40 md:mt-20 lg:mt-14'>
-				<div className='container grid items-center gap-6 px-4 md:px-6 lg:px-20 md:grid-cols-2 md:gap-10'>
+				<div className='container grid items-center gap-6 px-4 md:px-6 lg:px-20 sm:px-14 sm:grid-cols-2 md:gap-10'>
 					<div className='space-y-4'>
 						<h1 className='text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl'>
 							Rethinking the Way People Learn to Code
