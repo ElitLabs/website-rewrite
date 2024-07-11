@@ -84,12 +84,15 @@ export default function Navbar() {
 							>
 								ElitLabs
 							</Link>
-							<SheetClose>
-								<Button className='lg:hidden' size='icon' variant='ghost'>
-									<IoClose className='size-6' />
-									<span className='sr-only'>Close menu</span>
-								</Button>
-							</SheetClose>
+							<div className='flex flex-row items-center'>
+								<ThemeButton />
+								<SheetClose>
+									<Button size='icon' variant='ghost'>
+										<IoClose className='size-6' />
+										<span className='sr-only'>Close menu</span>
+									</Button>
+								</SheetClose>
+							</div>
 						</div>
 						<nav className='flex h-[90%] flex-col justify-between'>
 							<div className='grid gap-2 py-6'>
@@ -101,6 +104,18 @@ export default function Navbar() {
 								</MobileLink>
 								<MobileLink onOpenChange={setOpen} href='#'>
 									Contact
+								</MobileLink>
+							</div>
+							<div className='flex w-full flex-row justify-center'>
+								<MobileLink onOpenChange={setOpen} href='#'>
+									<Button size={'lg'} variant={'outline'} className='w-full'>
+										Log In
+									</Button>
+								</MobileLink>
+								<MobileLink onOpenChange={setOpen} href='#'>
+									<Button size={'lg'} className='w-full'>
+										Sign Up
+									</Button>
 								</MobileLink>
 							</div>
 						</nav>

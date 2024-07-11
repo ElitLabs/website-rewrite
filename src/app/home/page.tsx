@@ -10,7 +10,7 @@ export default function Homepage() {
 	return (
 		<div>
 			<Navbar />
-			<section className='mt-20 w-[100svw] py-28 md:mt-20 md:py-40 lg:mt-14'>
+			<section className='mt-16 w-[100svw] py-36 md:mt-20 md:py-40 lg:mt-14'>
 				<div className='container grid items-center gap-6 px-5 sm:grid-cols-2 sm:px-14 md:gap-10 lg:px-20'>
 					<div className='space-y-4'>
 						<h1 className='text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl'>
@@ -47,20 +47,6 @@ export default function Homepage() {
 								</Button>
 							</Link>
 						</div>
-						<div className='-ml-5 w-[calc(100%+2.5rem)] pt-16 sm:hidden'>
-							<div
-								className='-ml-5 w-[calc(100%+2.5rem)] bg-brand p-5'
-								content=' '
-							>
-								<Image
-									src={elitlaptop}
-									alt='Elitlabs Laptop Brand Image'
-									width={'540'}
-									height={'350'}
-									className='mx-auto w-[12.5%]'
-								/>
-							</div>
-						</div>
 					</div>
 					<Image
 						src={laptop}
@@ -71,7 +57,16 @@ export default function Homepage() {
 					/>
 				</div>
 			</section>
-			<section className='w-full bg-muted py-12 md:py-24 lg:py-32'>
+			<div className='w-[100svw] bg-brand p-5 sm:hidden' content=' '>
+				<Image
+					src={elitlaptop}
+					alt='Elitlabs Laptop Brand Image'
+					width={'540'}
+					height={'350'}
+					className='mx-auto w-[12.5%]'
+				/>
+			</div>
+			<section className='w-[100svw] bg-muted py-20 md:py-24 lg:py-32'>
 				<div className='container px-5 sm:px-6'>
 					<div className='flex flex-col items-center justify-center space-y-4 text-center'>
 						<div className='space-y-2'>
