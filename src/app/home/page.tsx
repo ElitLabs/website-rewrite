@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 import laptop from '@/assets/images/laptop.webp';
+import elitlaptop from '@/assets/images/elitlabslaptop.webp';
 import elitlabs from '@/../public/images/elitlabsicon.png';
 import Navbar from '@/components/navbar';
 import { Button } from '@/components/shadcn/ui/button';
@@ -9,8 +10,8 @@ export default function Homepage() {
 	return (
 		<div>
 			<Navbar />
-			<section className='mt-16 w-[100svw] pb-48 pt-20 md:mt-20 md:py-40 lg:mt-14'>
-				<div className='container grid items-center gap-6 px-4 sm:grid-cols-2 sm:px-14 md:gap-10 md:px-6 lg:px-20'>
+			<section className='mt-20 w-[100svw] py-28 md:mt-20 md:py-40 lg:mt-14'>
+				<div className='container grid items-center gap-6 px-5 sm:grid-cols-2 sm:px-14 md:gap-10 lg:px-20'>
 					<div className='space-y-4'>
 						<h1 className='text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl'>
 							Rethinking the Way People Learn to Code
@@ -19,23 +20,46 @@ export default function Homepage() {
 							We are a small group of passionate developers with the mission of
 							teaching people in ways that are intuitive, realistic, and fun.
 						</p>
-						<div className='flex flex-col gap-2 min-[400px]:flex-row md:gap-3'>
+						<div className='flex w-full flex-col gap-5 min-[400px]:flex-row sm:w-full md:gap-3'>
+							{/* Mobile buttons */}
 							<Link
 								href='#'
-								// className='inline-flex h-10 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50'
+								className='inline-flex h-12 w-full items-center justify-center rounded-md bg-primary px-8 py-3 text-base font-semibold text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring sm:hidden'
 								prefetch={false}
 							>
-								<Button size={'xl'}>Browse Courses</Button>
+								Browse Courses
 							</Link>
 							<Link
 								href='#'
-								// className='inline-flex h-10 items-center justify-center rounded-md border border-input bg-background px-8 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50'
+								className='inline-flex h-12 w-full items-center justify-center rounded-md border border-input bg-background px-8 py-3 text-base font-semibold shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring sm:hidden'
 								prefetch={false}
 							>
+								Get Started
+							</Link>
+
+							{/* Desktop buttons */}
+							<Link href='#' className='hidden sm:flex' prefetch={false}>
+								<Button size={'xl'}>Browse Courses</Button>
+							</Link>
+							<Link href='#' className='hidden sm:flex' prefetch={false}>
 								<Button size={'xl'} variant={'outline'}>
 									Get Started
 								</Button>
 							</Link>
+						</div>
+						<div className='-ml-5 w-[calc(100%+2.5rem)] pt-16 sm:hidden'>
+							<div
+								className='-ml-5 w-[calc(100%+2.5rem)] bg-brand p-5'
+								content=' '
+							>
+								<Image
+									src={elitlaptop}
+									alt='Elitlabs Laptop Brand Image'
+									width={'540'}
+									height={'350'}
+									className='mx-auto w-[12.5%]'
+								/>
+							</div>
 						</div>
 					</div>
 					<Image
@@ -48,7 +72,7 @@ export default function Homepage() {
 				</div>
 			</section>
 			<section className='w-full bg-muted py-12 md:py-24 lg:py-32'>
-				<div className='container px-4 md:px-6'>
+				<div className='container px-5 sm:px-6'>
 					<div className='flex flex-col items-center justify-center space-y-4 text-center'>
 						<div className='space-y-2'>
 							<div className='inline-block rounded-lg bg-muted px-3 py-1 text-xl'>
