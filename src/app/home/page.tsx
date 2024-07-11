@@ -10,6 +10,7 @@ import Navbar from '@/components/navbar';
 import { Button } from '@/components/shadcn/ui/button';
 import { IoTime } from 'react-icons/io5';
 import { Laptop } from 'lucide-react';
+import Footer from '@/components/footer';
 
 export default function Homepage() {
 	return (
@@ -29,7 +30,7 @@ export default function Homepage() {
 							{/* Mobile buttons */}
 							<Link
 								href='#'
-								className='inline-flex h-12 w-full items-center justify-center rounded-md bg-primary px-8 py-3 text-base font-semibold text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring sm:hidden'
+								className='inline-flex h-12 w-full items-center justify-center rounded-md bg-primary px-6 py-3 text-base font-semibold text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring sm:hidden'
 								prefetch={false}
 							>
 								Browse Courses
@@ -206,7 +207,17 @@ export default function Homepage() {
 					</div>
 				</div>
 			</section> */}
-			<section className='w-full py-12 md:py-24 lg:py-32'>
+			<section className='w-full py-20 md:py-24 lg:py-32'>
+				<div className='flex flex-col items-center justify-center space-y-4 pb-10 text-center'>
+					<div className='space-y-2'>
+						{/* <div className='inline-block rounded-lg bg-muted px-3 py-1 text-xl'>
+								On-Demand Courses
+							</div> */}
+						<h2 className='text-3xl font-bold tracking-tight sm:text-5xl'>
+							Why Us?
+						</h2>
+					</div>
+				</div>
 				<div className='container grid grid-cols-1 gap-8 px-4 md:grid-cols-2 md:gap-12 lg:grid-cols-4 lg:px-6'>
 					<div className='group overflow-hidden rounded-xl bg-card shadow transition-all hover:shadow-md dark:shadow-stone-900/90'>
 						<div className='p-6'>
@@ -216,9 +227,9 @@ export default function Homepage() {
 								{/* TODO: Rewrite */}
 								We believe in the power of learning through hands-on experience.
 								Our courses place a strong emphasis on practical coding
-								exercises and real-world projects. You'll have the opportunity
-								to apply your knowledge immediately, honing your coding skills
-								and problem-solving abilities.
+								exercises and real-world projects. You&apos;ll have the
+								opportunity to apply your knowledge immediately, honing your
+								coding skills and problem-solving abilities.
 							</p>
 						</div>
 					</div>
@@ -250,6 +261,7 @@ export default function Homepage() {
 					</div>
 				</div>
 			</section>
+			<Footer />
 		</div>
 	);
 }
