@@ -116,7 +116,8 @@ export default function Homepage() {
 									Introduction to Python
 								</h3>
 								<p className='text-muted-foreground'>
-									Explore one of the most popular programming languages.
+									Explore one of the most popular programming languages and
+									build complex projects.
 								</p>
 							</div>
 						</div>
@@ -141,95 +142,20 @@ export default function Homepage() {
 					</div>
 				</div>
 			</section>
-			{/* <section className='w-[100svw] py-20 md:py-24 lg:py-32'>
-				<div className='container px-5 sm:px-6'>
-					<div className='flex flex-col items-center justify-center space-y-4 text-center'>
-						<div className='space-y-2'>
-							<h2 className='text-3xl font-bold tracking-tight sm:text-5xl'>
-								Why Us?
-							</h2>
-						</div>
-					</div>
-					<div className='mx-auto grid grid-cols-1 gap-6 py-12 sm:grid-cols-2 md:grid-cols-3 lg:max-w-6xl'>
-						<div className='group overflow-hidden rounded-xl bg-card shadow-sm transition-all hover:shadow-md'>
-							<Image
-								src={elitlabs}
-								width='400'
-								height='225'
-								alt='Course'
-								className='aspect-[16/9] w-full object-cover'
-							/>
-							<div className='p-4'>
-								<h3 className='text-lg font-semibold'>
-									Introduction to React.js
-								</h3>
-								<p className='text-muted-foreground'>
-									Learn the fundamentals of React and build your first web
-									application.
-								</p>
-							</div>
-						</div>
-						<div className='group overflow-hidden rounded-xl bg-card shadow-sm transition-all hover:shadow-md'>
-							<Image
-								src={elitlabs}
-								width='400'
-								height='225'
-								alt='Course'
-								className='aspect-[16/9] w-full object-cover'
-							/>
-							<div className='p-4'>
-								<h3 className='text-lg font-semibold'>
-									Introduction to Python
-								</h3>
-								<p className='text-muted-foreground'>
-									Explore one of the most popular programming languages.
-								</p>
-							</div>
-						</div>
-						<div className='group overflow-hidden rounded-xl bg-card shadow-sm transition-all hover:shadow-md'>
-							<Image
-								src={elitlabs}
-								width='400'
-								height='225'
-								alt='Course'
-								className='aspect-[16/9] w-full object-cover'
-							/>
-							<div className='p-4'>
-								<h3 className='text-lg font-semibold'>
-									Introduction to Web Development
-								</h3>
-								<p className='text-muted-foreground'>
-									Learn the fundamentals of HTML, CSS, and JavaScript to build
-									your first website.
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section> */}
-			<section className='w-full py-20 md:py-24 lg:py-32'>
+			<section className='mx-auto w-full max-w-7xl py-20 md:py-24 lg:py-32'>
 				<div className='flex flex-col items-center justify-center space-y-4 pb-10 text-center'>
-					<div className='space-y-2'>
-						{/* <div className='inline-block rounded-lg bg-muted px-3 py-1 text-xl'>
-								On-Demand Courses
-							</div> */}
-						<h2 className='text-3xl font-bold tracking-tight sm:text-5xl'>
-							Why Us?
-						</h2>
-					</div>
+					<h2 className='text-3xl font-bold tracking-tight sm:text-5xl'>
+						Why Us?
+					</h2>
 				</div>
-				<div className='container grid grid-cols-1 gap-8 px-4 md:grid-cols-2 md:gap-12 lg:grid-cols-4 lg:px-6'>
+				<div className='container grid grid-cols-1 gap-8 px-4 md:grid-cols-2 md:gap-8 lg:grid-cols-4 lg:px-6'>
 					<div className='group overflow-hidden rounded-xl bg-card shadow transition-all hover:shadow-md dark:shadow-stone-900/90'>
 						<div className='p-6'>
 							<FaWrench className='size-8 text-primary' />
 							<h3 className='text-xl font-semibold'>Learn By Doing</h3>
 							<p className='text-muted-foreground'>
-								{/* TODO: Rewrite */}
-								We believe in the power of learning through hands-on experience.
-								Our courses place a strong emphasis on practical coding
-								exercises and real-world projects. You&apos;ll have the
-								opportunity to apply your knowledge immediately, honing your
-								coding skills and problem-solving abilities.
+								Our courses use real-world projects to help you apply your
+								knowledge to improve your coding and problem-solving skills.
 							</p>
 						</div>
 					</div>
@@ -237,7 +163,10 @@ export default function Homepage() {
 						<div className='p-6'>
 							<IoTime className='size-8 text-primary' />
 							<h3 className='text-xl font-semibold'>Learn On Your Own Time</h3>
-							<p className='text-muted-foreground'>Learn on your own time.</p>
+							<p className='text-muted-foreground'>
+								Access our online courses anytime, anywhere, enabling you to
+								learn at your own convenience and pace.
+							</p>
 						</div>
 					</div>
 					<div className='group overflow-hidden rounded-xl bg-card shadow transition-all hover:shadow-md dark:shadow-stone-900/90'>
@@ -245,7 +174,8 @@ export default function Homepage() {
 							<FaGraduationCap className='size-8 text-primary' />
 							<h3 className='text-xl font-semibold'>Easy To Learn</h3>
 							<p className='text-muted-foreground'>
-								Our courses are designed to be easy to learn.
+								Our curriculum is designed to make complex topics digestible,
+								making learning straightforward and accessible.
 							</p>
 						</div>
 					</div>
