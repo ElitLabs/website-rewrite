@@ -4,7 +4,7 @@ import { ReactNode } from 'react';
 
 export default function HomeLayout({ children }: { children: ReactNode }) {
 	return (
-		<div className='mt-10 min-h-screen'>
+		<div className='flex min-h-screen flex-col justify-between pt-16'>
 			<Navbar />
 			{children}
 			<Footer />

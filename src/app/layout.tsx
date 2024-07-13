@@ -54,7 +54,7 @@ export default function RootLayout({
 				/>
 				<link rel='manifest' href='/site.webmanifest' />
 			</head>
-			<body className='smooth-scroll overflow-x-hidden'>
+			<body className='smooth-scroll min-h-screen overflow-x-hidden'>
 				<Providers>
 					{children}
 					<Analytics />

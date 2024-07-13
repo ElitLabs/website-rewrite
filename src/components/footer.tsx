@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Button } from './shadcn/ui/button';
-import { SiDiscord, SiGmail } from 'react-icons/si';
+import { SiDiscord, SiGithub, SiGmail } from 'react-icons/si';
 
 export default function Footer() {
 	return (
@@ -23,6 +23,12 @@ export default function Footer() {
 						Contact Us
 					</h3>
 					<div className='flex w-full flex-row items-center gap-x-2 sm:w-auto'>
+						<Button variant='outline' size='icon'>
+							<a href={`https://github.com/elitlabs`}>
+								<SiGithub className='text-[1.35rem] text-[#181717] dark:invert' />
+								<span className='sr-only'>Check out our GitHub</span>
+							</a>
+						</Button>
 						<Button variant='outline' size='icon'>
 							<a href={`https://discord.gg/5byD5UsdUv`}>
 								<SiDiscord className='text-[1.35rem] text-[#5865F2]' />
