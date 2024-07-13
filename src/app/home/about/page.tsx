@@ -27,17 +27,6 @@ export default function AboutPage() {
 					by working through projects.
 				</p>
 			</div>
-			{/* <div>
-						<h2 className="text-4xl font-bold">Our Team</h2>
-						<p className="flex flex-col gap-y-2 text-xl font-normal"></p>
-						<p className="flex flex-col gap-y-2 text-xl font-normal">
-							We are currently looking for skilled web developers and tutors! If
-							you&apos;re interested in joining our team, please email us at{' '}
-							<a href="mailto:team@elitlabs.com>">team@elitlabs.com</a>.
-						</p>
-					</div>
-
-		*/}
 		</main>
 	);
 }
