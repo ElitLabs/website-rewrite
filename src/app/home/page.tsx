@@ -1,16 +1,14 @@
-import Link from 'next/link';
 import Image from 'next/image';
+import Link from 'next/link';
 
-import laptop from '@/assets/images/laptop.webp';
-import elitlaptop from '@/assets/images/elitlabslaptop.webp';
 import elitlabs from '@/../public/images/elitlabsicon.png';
+import elitlaptop from '@/assets/images/elitlabslaptop.webp';
+import laptop from '@/assets/images/laptop.webp';
 
-import { FaGraduationCap, FaWrench } from 'react-icons/fa';
-import Navbar from '@/components/navbar';
 import { Button } from '@/components/shadcn/ui/button';
-import { IoTime } from 'react-icons/io5';
 import { Laptop } from 'lucide-react';
-import Footer from '@/components/footer';
+import { FaGraduationCap, FaWrench } from 'react-icons/fa';
+import { IoTime } from 'react-icons/io5';
 
 export const metadata = {
 	title: 'ElitLabs | Home',

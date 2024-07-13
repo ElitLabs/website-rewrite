@@ -1,3 +1,4 @@
+// TODO: Fix sizes
 import Link from 'next/link';
 import { SiDiscord, SiInstagram, SiTwitter } from 'react-icons/si';
 
@@ -8,7 +9,7 @@ export const metadata = {
 export default function Contact() {
 	return (
 		<div className='my-auto flex h-full w-full flex-col items-center justify-center'>
-			<h1 className='pb-10 text-center text-6xl font-bold tracking-tight'>
+			<h1 className='pb-10 text-center text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl'>
 				Contact Us
 			</h1>
 
