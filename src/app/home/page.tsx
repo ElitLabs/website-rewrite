@@ -12,10 +12,13 @@ import { IoTime } from 'react-icons/io5';
 import { Laptop } from 'lucide-react';
 import Footer from '@/components/footer';
 
+export const metadata = {
+	title: 'ElitLabs | Home',
+};
+
 export default function Homepage() {
 	return (
 		<div>
-			<Navbar />
 			<section className='mt-16 w-[100svw] py-36 md:mt-20 md:py-40 lg:mt-14'>
 				<div className='container grid items-center gap-6 px-5 sm:grid-cols-2 sm:px-14 md:gap-10 lg:px-20'>
 					<div className='space-y-4'>
@@ -142,13 +145,13 @@ export default function Homepage() {
 					</div>
 				</div>
 			</section>
-			<section className='mx-auto w-full max-w-7xl py-20 md:py-24 lg:py-32'>
+			<section className='mx-auto w-full max-w-2xl py-20 md:max-w-4xl md:py-24 lg:max-w-7xl lg:py-32'>
 				<div className='flex flex-col items-center justify-center space-y-4 pb-10 text-center'>
 					<h2 className='text-3xl font-bold tracking-tight sm:text-5xl'>
 						Why Us?
 					</h2>
 				</div>
-				<div className='container grid grid-cols-1 gap-8 px-4 md:grid-cols-2 md:gap-8 lg:grid-cols-4 lg:px-6'>
+				<div className='container grid grid-cols-1 gap-8 px-4 md:grid-cols-2 md:gap-12 lg:grid-cols-4'>
 					<div className='group overflow-hidden rounded-xl bg-card shadow transition-all hover:shadow-md dark:shadow-stone-900/90'>
 						<div className='p-6'>
 							<FaWrench className='size-8 text-primary' />
@@ -191,7 +194,6 @@ export default function Homepage() {
 					</div>
 				</div>
 			</section>
-			<Footer />
 		</div>
 	);
 }

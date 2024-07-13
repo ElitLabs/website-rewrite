@@ -21,23 +21,23 @@ export default function Navbar() {
 
 	return (
 		<nav className='fixed top-0 w-[100svw] border-b bg-background px-4 py-3 md:px-10'>
-			<div className='mx-auto hidden max-w-7xl grid-cols-3 flex-row items-center justify-between md:flex lg:grid'>
+			<div className='mx-auto hidden w-full max-w-7xl flex-row items-center justify-between md:flex'>
 				<Link href='/' className='font-quicksand text-3xl font-bold text-brand'>
 					ElitLabs
 				</Link>
-				<div className='flex items-center'>
+				<div className='flex w-full items-center justify-center'>
 					{/* TODO: Figure out button order */}
 					<Link href={'#'}>
 						<Button variant={'ghost'} className='text-base'>
 							Courses
 						</Button>
 					</Link>
-					<Link href={'#'}>
+					<Link href={'/about'}>
 						<Button variant={'ghost'} className='text-base'>
 							About
 						</Button>
 					</Link>
-					<Link href={'#'}>
+					<Link href={'/contact'}>
 						<Button variant={'ghost'} className='text-base'>
 							Contact
 						</Button>
@@ -99,10 +99,10 @@ export default function Navbar() {
 								<MobileLink onOpenChange={setOpen} href='#'>
 									Courses
 								</MobileLink>
-								<MobileLink onOpenChange={setOpen} href='#'>
+								<MobileLink onOpenChange={setOpen} href='/about'>
 									About
 								</MobileLink>
-								<MobileLink onOpenChange={setOpen} href='#'>
+								<MobileLink onOpenChange={setOpen} href='/contact'>
 									Contact
 								</MobileLink>
 							</div>

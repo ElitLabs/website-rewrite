@@ -13,8 +13,8 @@ export default function Footer() {
 				<div className='grid w-full grid-cols-2 items-center gap-x-2 text-lg font-semibold sm:flex sm:w-auto sm:flex-row sm:gap-x-4'>
 					<h1 className='col-span-2 text-2xl font-bold sm:hidden'>Pages</h1>
 					<Link href='#'>Courses</Link>
-					<Link href='#'>About</Link>
-					<Link href='#'>Contact</Link>
+					<Link href='/about'>About</Link>
+					<Link href='/contact'>Contact</Link>
 					<Link href='#'>Terms</Link>
 					<Link href='#'>Privacy</Link>
 				</div>
