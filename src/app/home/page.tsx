@@ -1,3 +1,5 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -9,12 +11,29 @@ import { Button } from '@/components/shadcn/ui/button';
 import { Laptop } from 'lucide-react';
 import { FaGraduationCap, FaWrench } from 'react-icons/fa';
 import { IoTime } from 'react-icons/io5';
-
-export const metadata = {
-	title: 'ElitLabs | Home',
-};
+import { useEffect } from 'react';
+import { toast } from 'sonner';
 
 export default function Homepage() {
+	useEffect(() => {
+		toast(
+			<div className='flex flex-col p-2'>
+				<span className='text-base font-normal'>
+					Hello! We are looking for web developers, writers, and video editors.
+				</span>
+				<span className='font-light text-muted-foreground'>
+					If you are any one of those things, please feel free to reach out to
+					us at{' '}
+					<Link href={'mailto:team@elitlabs.com'} className='font-medium'>
+						team@elitlabs.com
+					</Link>
+					.
+				</span>
+			</div>,
+			{ closeButton: true },
+		);
+	});
+
 	return (
 		<div>
 			<section className='mt-16 w-[100svw] py-36 md:mt-20 md:py-40 lg:mt-14'>
