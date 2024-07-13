@@ -1,3 +1,10 @@
+import { Button } from '@/components/shadcn/ui/button';
+import {
+	HoverCard,
+	HoverCardContent,
+	HoverCardTrigger,
+} from '@/components/shadcn/ui/hover-card';
+
 export const metadata = {
 	title: 'ElitLabs | About',
 };
@@ -18,11 +25,27 @@ export default function AboutPage() {
 					Our Story
 				</h2>
 				<p className='max-w-3xl text-lg'>
-					We&apos;re ElitLabs, a small group of friends who came together to
-					create a platform for learning and teaching. As students ourselves, we
-					know how hard it can be to learn using the current courses, tutorials,
-					and documentation out there. In our experience, we realized that we
-					can learn better by <span className='inline font-bold'> doing</span>.
+					We&apos;re ElitLabs, a{' '}
+					<HoverCard>
+						<HoverCardTrigger>
+							<Button variant='info' size='info'>
+								non-profit
+							</Button>
+						</HoverCardTrigger>
+						<HoverCardContent className='flex flex-col text-base'>
+							We are a registered non-profit under HackClub&apos;s HCB fiscal
+							sponsorship program.
+							<span>
+								{'('}EIN: <span className='text-mono'>81-2908499</span>
+								{')'}
+							</span>
+						</HoverCardContent>
+					</HoverCard>{' '}
+					created by a small group of friends who came together to create a
+					platform for learning and teaching. As students ourselves, we know how
+					hard it can be to learn using the current courses, tutorials, and
+					documentation out there. In our experience, we realized that we can
+					learn better by <span className='inline font-bold'> doing</span>.
 					That&apos;s why we&apos;re creating a platform for developers to learn
 					by working through projects.
 				</p>

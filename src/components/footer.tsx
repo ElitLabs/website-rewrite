@@ -1,7 +1,6 @@
 import Link from 'next/link';
-import { Button } from './shadcn/ui/button';
 import { SiDiscord, SiGithub, SiGmail } from 'react-icons/si';
-import ThemeButton from './theme-button';
+import { Button } from './shadcn/ui/button';
 
 export default function Footer() {
 	return (
