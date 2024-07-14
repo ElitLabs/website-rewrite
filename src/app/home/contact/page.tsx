@@ -8,7 +8,7 @@ export const metadata = {
 
 export default function Contact() {
 	return (
-		<div className='my-auto flex h-full w-full flex-col items-center justify-center'>
+		<main className='mx-auto my-24 flex h-full w-full max-w-[80%] flex-col items-center justify-center gap-y-20 md:my-auto'>
 			<h1 className='pb-10 text-center text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl'>
 				Contact Us
 			</h1>
@@ -68,6 +68,6 @@ export default function Contact() {
 					</div>
 				</div>
 			</div>
-		</div>
+		</main>
 	);
 }
