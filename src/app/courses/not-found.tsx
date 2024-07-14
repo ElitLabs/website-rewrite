@@ -6,7 +6,7 @@ export default function NotFound() {
 	return (
 		<div>
 			<h1>404</h1>
-			<h2>Page Not Found</h2>
+			<h2>Page Not Found TEST</h2>
 			<Link href={'/'}>
 				<Button size={'xl2'}>Back To Home</Button>
 			</Link>

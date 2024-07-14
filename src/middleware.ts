@@ -22,16 +22,6 @@ export default async function middleware(req: NextRequest) {
 		.get('host')!
 		.replace('.localhost:3000', `.${process.env.NEXT_PUBLIC_ROOT_DOMAIN}`);
 
-	// // special case for Vercel preview deployment URLs
-	// if (
-	// 	hostname.includes('---') &&
-	// 	hostname.endsWith(`.${process.env.NEXT_PUBLIC_VERCEL_DEPLOYMENT_SUFFIX}`)
-	// ) {
-	// 	hostname = `${hostname.split('---')[0]}.${
-	// 		process.env.NEXT_PUBLIC_ROOT_DOMAIN
-	// 	}`;
-	// }
-
 	const searchParams = req.nextUrl.searchParams.toString();
 	// Get the pathname of the request (e.g. /, /about, /blog/first-post)
 	const path = `${url.pathname}${
@@ -47,7 +37,7 @@ export default async function middleware(req: NextRequest) {
 	// 		return NextResponse.redirect(new URL('/', req.url));
 	// 	}
 	// 	return NextResponse.rewrite(
-	// 		new URL(`/app${path === '/' ? '' : path}`, req.url)
+	// 		new URL(`/app${path === '/' ? '' : path}`, req.url),
 	// 	);
 	// }
 
@@ -59,7 +49,6 @@ export default async function middleware(req: NextRequest) {
 	// }
 
 	// rewrite root application to `/home` folder
-	console.log(hostname);
 	if (
 		hostname === 'localhost:3000' ||
 		hostname === process.env.NEXT_PUBLIC_ROOT_DOMAIN
@@ -69,6 +58,15 @@ export default async function middleware(req: NextRequest) {
 		);
 	}
 
+	console.log(
+		`Redirecting ${req.headers.get('host')} >>> /${hostname.replace('.' + process.env.NEXT_PUBLIC_ROOT_DOMAIN, '')}${path} || ${hostname.replace('.' + process.env.NEXT_PUBLIC_ROOT_DOMAIN, '')}`,
+	);
+
 	// rewrite everything else to `/[domain]/[slug] dynamic route
-	return NextResponse.rewrite(new URL(`/${hostname}${path}`, req.url));
+	return NextResponse.rewrite(
+		new URL(
+			`/${hostname.replace('.' + process.env.NEXT_PUBLIC_ROOT_DOMAIN, '')}${path}`,
+			req.url,
+		),
+	);
 }
