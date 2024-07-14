@@ -8,7 +8,8 @@ import elitlaptop from '@/assets/images/elitlabslaptop.webp';
 import laptop from '@/assets/images/laptop.webp';
 
 import { Button } from '@/components/shadcn/ui/button';
-import { Laptop } from 'lucide-react';
+import { AlarmClock, GraduationCap, Laptop, Wrench } from 'lucide-react';
+import { BsFillLaptopFill } from 'react-icons/bs';
 import { FaGraduationCap, FaWrench } from 'react-icons/fa';
 import { IoTime } from 'react-icons/io5';
 import { useEffect } from 'react';
@@ -35,9 +36,9 @@ export default function Homepage() {
 	});
 
 	return (
-		<div>
-			<section className='mt-8 w-[100svw] py-36 md:mt-12 md:py-40 lg:mt-4 lg:py-28'>
-				<div className='container grid items-center gap-6 px-5 sm:grid-cols-2 sm:px-14 md:gap-10 lg:px-20'>
+		<main>
+			<section className='mt-8 w-[100svw] py-24 lg:mt-4 lg:py-28'>
+				<div className='container mx-auto grid items-center gap-6 px-5 sm:grid-cols-2 sm:px-14 md:gap-10 xl:px-20'>
 					<div className='space-y-4'>
 						<h1 className='text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl'>
 							Rethinking the Way People Learn to Code
@@ -64,23 +65,41 @@ export default function Homepage() {
 							</Link>
 
 							{/* Desktop buttons */}
-							<Link href='#' className='hidden sm:flex' prefetch={false}>
+							<Link
+								href='#'
+								className='hidden sm:flex md:hidden'
+								prefetch={false}
+							>
+								<Button size={'default'}>Browse Courses</Button>
+							</Link>
+							<Link
+								href='#'
+								className='hidden sm:flex md:hidden'
+								prefetch={false}
+							>
+								<Button size={'default'} variant={'outline'}>
+									Get Started
+								</Button>
+							</Link>
+							<Link href='#' className='hidden md:flex' prefetch={false}>
 								<Button size={'xl'}>Browse Courses</Button>
 							</Link>
-							<Link href='#' className='hidden sm:flex' prefetch={false}>
+							<Link href='#' className='hidden md:flex' prefetch={false}>
 								<Button size={'xl'} variant={'outline'}>
 									Get Started
 								</Button>
 							</Link>
 						</div>
 					</div>
-					<Image
-						src={laptop}
-						width='550'
-						height='550'
-						alt='Hero'
-						className='mx-auto hidden overflow-hidden rounded-xl object-cover object-center sm:flex sm:w-[80%] lg:order-last'
-					/>
+					<div className='flex w-full justify-end'>
+						<Image
+							src={laptop}
+							width='550'
+							height='550'
+							alt='Hero'
+							className='hidden overflow-hidden rounded-xl object-cover object-center sm:flex sm:w-[80%] md:w-[90%] lg:order-last lg:w-[85%]'
+						/>
+					</div>
 				</div>
 			</section>
 			<div className='w-[100svw] bg-brand p-5 sm:hidden' content=' '>
@@ -104,7 +123,7 @@ export default function Homepage() {
 							</h2>
 						</div>
 					</div>
-					<div className='mx-auto grid grid-cols-1 gap-6 py-12 sm:grid-cols-2 md:grid-cols-3 lg:max-w-6xl'>
+					<div className='mx-auto grid max-w-xl grid-cols-1 gap-6 py-12 sm:grid-cols-2 md:max-w-3xl md:grid-cols-3 lg:max-w-6xl'>
 						<div className='group overflow-hidden rounded-xl bg-card shadow-sm transition-all hover:shadow-md'>
 							<Image
 								src={elitlabs}
@@ -168,10 +187,12 @@ export default function Homepage() {
 						Why Us?
 					</h2>
 				</div>
-				<div className='container grid grid-cols-1 gap-8 px-4 md:grid-cols-2 md:gap-12 lg:grid-cols-4'>
-					<div className='group overflow-hidden rounded-xl bg-card shadow transition-all hover:shadow-md dark:shadow-stone-900/90'>
+				<div className='container grid max-w-xl grid-cols-1 gap-8 px-4 md:max-w-3xl md:grid-cols-2 md:gap-12 lg:max-w-6xl lg:grid-cols-4'>
+					<div className='group overflow-hidden rounded-xl border-t-4 border-t-brand bg-card shadow transition-all hover:shadow-md dark:shadow-stone-900/90'>
 						<div className='p-6'>
-							<FaWrench className='size-8 text-primary' />
+							<div className='mb-2 size-min items-center rounded-full bg-brand p-2'>
+								<Wrench className='size-5 text-background' />
+							</div>
 							<h3 className='text-xl font-semibold'>Learn By Doing</h3>
 							<p className='text-muted-foreground'>
 								Our courses use real-world projects to help you apply your
@@ -179,9 +200,11 @@ export default function Homepage() {
 							</p>
 						</div>
 					</div>
-					<div className='group overflow-hidden rounded-xl bg-card shadow transition-all hover:shadow-md dark:shadow-stone-900/90'>
+					<div className='group overflow-hidden rounded-xl border-t-4 border-t-brand bg-card shadow transition-all hover:shadow-md dark:shadow-stone-900/90'>
 						<div className='p-6'>
-							<IoTime className='size-8 text-primary' />
+							<div className='mb-2 size-min items-center rounded-full bg-brand p-2'>
+								<AlarmClock className='size-5 text-background' />
+							</div>
 							<h3 className='text-xl font-semibold'>Learn On Your Own Time</h3>
 							<p className='text-muted-foreground'>
 								Access our online courses anytime, anywhere, enabling you to
@@ -189,9 +212,11 @@ export default function Homepage() {
 							</p>
 						</div>
 					</div>
-					<div className='group overflow-hidden rounded-xl bg-card shadow transition-all hover:shadow-md dark:shadow-stone-900/90'>
+					<div className='group overflow-hidden rounded-xl border-t-4 border-t-brand bg-card shadow transition-all hover:shadow-md dark:shadow-stone-900/90'>
 						<div className='p-6'>
-							<FaGraduationCap className='size-8 text-primary' />
+							<div className='mb-2 size-min items-center rounded-full bg-brand p-2'>
+								<GraduationCap className='size-5 text-background' />
+							</div>
 							<h3 className='text-xl font-semibold'>Easy To Learn</h3>
 							<p className='text-muted-foreground'>
 								Our curriculum is designed to make complex topics digestible,
@@ -199,9 +224,11 @@ export default function Homepage() {
 							</p>
 						</div>
 					</div>
-					<div className='group overflow-hidden rounded-xl bg-card shadow transition-all hover:shadow-md dark:shadow-stone-900/90'>
+					<div className='group overflow-hidden rounded-xl border-t-4 border-t-brand bg-card shadow transition-all hover:shadow-md dark:shadow-stone-900/90'>
 						<div className='p-6'>
-							<Laptop className='size-8 text-primary' />
+							<div className='mb-2 size-min items-center rounded-full bg-brand p-2'>
+								<Laptop className='size-5 text-background' />
+							</div>
 							<h3 className='text-xl font-semibold'>Stay Engaged</h3>
 							<p className='text-muted-foreground'>
 								Our courses use a mixture of projects, multiple-choice quizzes,
@@ -211,6 +238,6 @@ export default function Homepage() {
 					</div>
 				</div>
 			</section>
-		</div>
+		</main>
 	);
 }
