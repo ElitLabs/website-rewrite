@@ -1,3 +1,3 @@
 export default function CoursesPage() {
-	return <div>Courses</div>;
+	return <div>Courses Prod</div>;
 }
