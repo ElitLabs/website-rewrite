@@ -15,6 +15,11 @@ export const config = {
 };
 
 export default async function middleware(req: NextRequest) {
+	if (req.url.includes('image')) {
+		return NextResponse.rewrite(new URL(req.url, req.url));
+	}
+	console.log(req.url);
+
 	const url = req.nextUrl;
 	// Get hostname of request (e.g. demo.vercel.pub, demo.localhost:3000)
 	let hostname = req.headers.get('host')!;
@@ -36,9 +41,9 @@ export default async function middleware(req: NextRequest) {
 		);
 	}
 
-	// console.log(
-	// 	`Redirecting ${req.headers.get('host')} >>> /${hostname.replace('.' + process.env.NEXT_PUBLIC_ROOT_DOMAIN, '')}${path} || ${hostname} -> ${hostname.replace('.' + process.env.NEXT_PUBLIC_ROOT_DOMAIN, '')}`,
-	// );
+	console.log(
+		`/${hostname.replace('.' + process.env.NEXT_PUBLIC_ROOT_DOMAIN, '')}${path}`,
+	);
 
 	// rewrite everything else to `/[domain]/[slug] dynamic route
 	return NextResponse.rewrite(

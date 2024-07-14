@@ -36,7 +36,7 @@ export default function Homepage() {
 
 	return (
 		<div>
-			<section className='mt-8 w-[100svw] py-36 md:mt-12 md:py-40 lg:mt-4'>
+			<section className='mt-8 w-[100svw] py-36 md:mt-12 md:py-40 lg:mt-4 lg:py-28'>
 				<div className='container grid items-center gap-6 px-5 sm:grid-cols-2 sm:px-14 md:gap-10 lg:px-20'>
 					<div className='space-y-4'>
 						<h1 className='text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl'>
