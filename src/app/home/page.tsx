@@ -9,9 +9,6 @@ import laptop from '@/assets/images/laptop.webp';
 
 import { Button } from '@/components/shadcn/ui/button';
 import { AlarmClock, GraduationCap, Laptop, Wrench } from 'lucide-react';
-import { BsFillLaptopFill } from 'react-icons/bs';
-import { FaGraduationCap, FaWrench } from 'react-icons/fa';
-import { IoTime } from 'react-icons/io5';
 import { useEffect } from 'react';
 import { toast } from 'sonner';
 
