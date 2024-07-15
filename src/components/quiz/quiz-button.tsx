@@ -11,9 +11,12 @@ const buttonVariants = cva(
 	{
 		variants: {
 			variant: {
-				default: 'bg-[linear-gradient(to_left,var(--primary)_50%,#64748b_50%)]',
-				correct: 'bg-[linear-gradient(to_left,var(--primary)_50%,#22c55e_50%)]',
-				wrong: 'bg-[linear-gradient(to_right,#ef4444_50%,var(--primary)_50%)]',
+				default:
+					'bg-[linear-gradient(to_right,#64748b_50%,hsl(var(--primary))_50%)]',
+				correct:
+					'bg-[linear-gradient(to_right,#22c55e_50%,hsl(var(--primary))_50%)]',
+				wrong:
+					'bg-[linear-gradient(to_right,#ef4444_50%,hsl(var(--primary))_50%)]',
 			},
 			size: {
 				default: 'h-10 px-4 py-2',
@@ -27,7 +30,7 @@ const buttonVariants = cva(
 			answered: {
 				true: 'animate-button-in fill-mode-[forwards]',
 				false:
-					'!bg-[linear-gradient(to_right,var(--primary)_50%,var(--primary)_50%)]',
+					'!bg-[linear-gradient(to_right,hsl(var(--primary))_50%,hsl(var(--primary))_50%)]',
 			},
 		},
 		defaultVariants: {
@@ -68,11 +71,11 @@ export default function QuizButton({
 	return (
 		<Button
 			className='gap-2'
-			// variant={index == 0 ? 'correct' : index == 3 ? 'wrong' : 'default'}
-			variant={'correct'}
+			variant={index == 0 ? 'correct' : index == 3 ? 'wrong' : 'default'}
+			// variant={'wrong'}
 			answered={index % 2 == 0}
 		>
-			<div className='flex aspect-square h-full w-auto items-center justify-center rounded-full bg-[linear-gradient(to_right,#64748b_50%,var(--secondary)_50%)]'>
+			<div className='flex aspect-square h-full w-auto items-center justify-center rounded-full bg-[hsl(var(--primary))]'>
 				{String.fromCharCode(index + 65)}
 			</div>
 			{option.content}
