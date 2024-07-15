@@ -15,8 +15,8 @@ export default function Footer() {
 					<Link href='#'>Courses</Link>
 					<Link href='/about'>About</Link>
 					<Link href='/contact'>Contact</Link>
-					<Link href='#'>Terms</Link>
-					<Link href='#'>Privacy</Link>
+					<Link href='/terms'>Terms</Link>
+					<Link href='/privacy'>Privacy</Link>
 				</div>
 				<div className='flex w-full flex-col items-center justify-start gap-y-1 sm:w-auto sm:justify-center'>
 					<h3 className='w-full text-2xl font-bold sm:text-center md:w-auto md:text-xl'>
