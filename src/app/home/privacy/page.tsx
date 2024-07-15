@@ -1,3 +1,7 @@
+export const metadata = {
+	title: 'ElitLabs | Privacy Policy',
+};
+
 export default function PrivacyPage() {
 	return (
 		<div className='mx-auto px-[6%] py-16'>
