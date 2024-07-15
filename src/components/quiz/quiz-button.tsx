@@ -13,6 +13,7 @@ const buttonVariants = cva(
 			variant: {
 				default:
 					'bg-[linear-gradient(to_right,#64748b_50%,hsl(var(--primary))_50%)]',
+				selected: '',
 				correct:
 					'bg-[linear-gradient(to_right,#22c55e_50%,hsl(var(--primary))_50%)]',
 				wrong:
@@ -41,14 +42,40 @@ const buttonVariants = cva(
 	},
 );
 
+const letterVariant = cva(
+	'flex aspect-square h-full w-auto items-center justify-center rounded-full',
+	{
+		variants: {
+			variant: {
+				default: '',
+				selected: '',
+				correct: '',
+				wrong: '',
+			},
+			answered: {
+				true: '',
+				false: '',
+			},
+		},
+		defaultVariants: {
+			variant: 'default',
+			answered: false,
+		},
+	},
+);
+
 export interface ButtonProps
 	extends React.ButtonHTMLAttributes<HTMLButtonElement>,
 		VariantProps<typeof buttonVariants> {
 	asChild?: boolean;
+	index: number;
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-	({ className, variant, size, answered, asChild = false, ...props }, ref) => {
+	(
+		{ className, variant, size, answered, index, asChild = false, ...props },
+		ref,
+	) => {
 		const Comp = asChild ? Slot : 'button';
 		return (
 			<Comp
@@ -74,8 +101,9 @@ export default function QuizButton({
 			variant={index == 0 ? 'correct' : index == 3 ? 'wrong' : 'default'}
 			// variant={'wrong'}
 			answered={index % 2 == 0}
+			index={index}
 		>
-			<div className='flex aspect-square h-full w-auto items-center justify-center rounded-full bg-[hsl(var(--primary))]'>
+			<div className='flex aspect-square h-full w-auto items-center justify-center rounded-full bg-muted-foreground'>
 				{String.fromCharCode(index + 65)}
 			</div>
 			{option.content}
