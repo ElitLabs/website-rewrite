@@ -7,14 +7,13 @@ import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '@/lib/utils';
 
 const buttonVariants = cva(
-	'inline-flex items-center bg-[000%] border-2 justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-200%',
+	'inline-flex items-center border-2 justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-200%',
 	{
 		variants: {
 			variant: {
-				default:
-					'bg-[linear-gradient(to_right,var(--primary)_50%,#0000ff_50%)] ',
-				correct: 'bg-[linear-gradient(to_right,#22c55e_50%,#0000ff_50%)]',
-				wrong: 'bg-[linear-gradient(to_right,#ef4444_50%,#0000ff_50%)]',
+				default: 'bg-[linear-gradient(to_left,var(--primary)_50%,#64748b_50%)]',
+				correct: 'bg-[linear-gradient(to_left,var(--primary)_50%,#22c55e_50%)]',
+				wrong: 'bg-[linear-gradient(to_right,#ef4444_50%,var(--primary)_50%)]',
 			},
 			size: {
 				default: 'h-10 px-4 py-2',
@@ -27,7 +26,8 @@ const buttonVariants = cva(
 			},
 			answered: {
 				true: 'animate-button-in fill-mode-[forwards]',
-				false: '',
+				false:
+					'!bg-[linear-gradient(to_right,var(--primary)_50%,var(--primary)_50%)]',
 			},
 		},
 		defaultVariants: {
@@ -49,7 +49,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 		const Comp = asChild ? Slot : 'button';
 		return (
 			<Comp
-				className={cn(buttonVariants({ variant, size, answered, className }))}
+				className={cn(buttonVariants({ answered, variant, size, className }))}
 				ref={ref}
 				{...props}
 			/>
@@ -68,10 +68,11 @@ export default function QuizButton({
 	return (
 		<Button
 			className='gap-2'
-			variant={index == 1 ? 'correct' : index == 2 ? 'wrong' : 'default'}
+			// variant={index == 0 ? 'correct' : index == 3 ? 'wrong' : 'default'}
+			variant={'correct'}
 			answered={index % 2 == 0}
 		>
-			<div className='flex aspect-square h-full w-auto items-center justify-center rounded-full'>
+			<div className='flex aspect-square h-full w-auto items-center justify-center rounded-full bg-[linear-gradient(to_right,#64748b_50%,var(--secondary)_50%)]'>
 				{String.fromCharCode(index + 65)}
 			</div>
 			{option.content}

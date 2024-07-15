@@ -16,7 +16,7 @@ const test: QuizContent = {
 
 export default function TestPage() {
 	return (
-		<div className='bg-200% bg-[linear-gradient(to_right,#ef4444_50%,#0000ff_50%)] bg-[100%]'>
+		<div className='bg-200% bg-pos-half bg-[linear-gradient(to_right,#ef4444_50%,#0000ff_50%)]'>
 			<ThemeButton />
 
 			<Quiz content={test} />

@@ -22,6 +22,9 @@ const config = {
 				'200%': '200%',
 				'400%': '400%',
 			},
+			backgroundPosition: {
+				'pos-half': '100%',
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
