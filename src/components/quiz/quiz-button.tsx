@@ -12,12 +12,12 @@ const buttonVariants = cva(
 		variants: {
 			variant: {
 				default:
-					'bg-[linear-gradient(to_right,#64748b_50%,hsl(var(--primary))_50%)]',
+					'bg-[linear-gradient(to_right,#64748b_50%,hsl(var(--secondary))_50%)]',
 				selected: '',
 				correct:
-					'bg-[linear-gradient(to_right,#22c55e_50%,hsl(var(--primary))_50%)]',
+					'bg-[linear-gradient(to_right,#22c55e_50%,hsl(var(--secondary))_50%)]',
 				wrong:
-					'bg-[linear-gradient(to_right,#ef4444_50%,hsl(var(--primary))_50%)]',
+					'bg-[linear-gradient(to_right,#ef4444_50%,hsl(var(--secondary))_50%)]',
 			},
 			size: {
 				default: 'h-10 px-4 py-2',
@@ -31,7 +31,7 @@ const buttonVariants = cva(
 			answered: {
 				true: 'animate-button-in fill-mode-[forwards]',
 				false:
-					'!bg-[linear-gradient(to_right,hsl(var(--primary))_50%,hsl(var(--primary))_50%)]',
+					'!bg-[linear-gradient(to_right,hsl(var(--secondary))_50%,hsl(var(--secondary))_50%)]',
 			},
 		},
 		defaultVariants: {
@@ -43,18 +43,18 @@ const buttonVariants = cva(
 );
 
 const letterVariant = cva(
-	'flex aspect-square h-full w-auto items-center justify-center rounded-full',
+	'flex aspect-square h-full w-auto items-center justify-center rounded-full bg-200% bg-transparent',
 	{
 		variants: {
 			variant: {
-				default: 'bg-muted',
-				selected: 'bg-slate-300',
-				correct: 'bg-green-300',
-				wrong: 'bg-red-300',
+				default: 'bg-blend-overlay bg-secondary/40',
+				selected: '!bg-slate-400',
+				correct: 'bg-blend-overlay bg-secondary/40',
+				wrong: 'bg-blend-overlay bg-secondary/40',
 			},
 			answered: {
-				true: '',
-				false: '',
+				true: 'animate-button-in fill-mode-[forwards]',
+				false: '!bg-muted',
 			},
 		},
 		defaultVariants: {
@@ -69,11 +69,21 @@ export interface ButtonProps
 		VariantProps<typeof buttonVariants> {
 	asChild?: boolean;
 	index: number;
+	content: string;
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 	(
-		{ className, variant, size, answered, index, asChild = false, ...props },
+		{
+			className,
+			variant,
+			size,
+			answered,
+			index,
+			content,
+			asChild = false,
+			...props
+		},
 		ref,
 	) => {
 		const Comp = asChild ? Slot : 'button';
@@ -84,9 +94,9 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 				{...props}
 			>
 				<div className={cn(letterVariant({ variant, answered }))}>
-					{' '}
 					{String.fromCharCode(index + 65)}
 				</div>
+				<p className='text-primary'>{content}</p>
 			</Comp>
 		);
 	},
@@ -104,14 +114,9 @@ export default function QuizButton({
 		<Button
 			className='gap-2'
 			variant={index == 0 ? 'correct' : index == 3 ? 'wrong' : 'default'}
-			// variant={'wrong'}
 			answered={index % 2 == 0}
 			index={index}
-		>
-			{/* <div className='flex aspect-square h-full w-auto items-center justify-center rounded-full bg-muted-foreground'>
-				{String.fromCharCode(index + 65)}
-			</div> */}
-			{option.content}
-		</Button>
+			content={option.content}
+		/>
 	);
 }
