@@ -11,9 +11,8 @@ const buttonVariants = cva(
 	{
 		variants: {
 			variant: {
-				default:
-					'bg-[linear-gradient(to_right,#64748b_50%,hsl(var(--secondary))_50%)]',
-				selected: '',
+				default: 'bg-background',
+				selected: 'bg-slate-400',
 				correct:
 					'bg-[linear-gradient(to_right,#22c55e_50%,hsl(var(--secondary))_50%)]',
 				wrong:
@@ -30,8 +29,7 @@ const buttonVariants = cva(
 			},
 			answered: {
 				true: 'animate-button-in fill-mode-[forwards]',
-				false:
-					'!bg-[linear-gradient(to_right,hsl(var(--secondary))_50%,hsl(var(--secondary))_50%)]',
+				false: '',
 			},
 		},
 		defaultVariants: {
@@ -43,14 +41,14 @@ const buttonVariants = cva(
 );
 
 const letterVariant = cva(
-	'flex aspect-square h-full w-auto items-center justify-center rounded-full bg-200% bg-transparent',
+	'flex aspect-square h-full w-auto items-center justify-center rounded-full bg-200% bg-transparent bg-blend-overlay bg-secondary/40',
 	{
 		variants: {
 			variant: {
-				default: 'bg-blend-overlay bg-secondary/40',
-				selected: '!bg-slate-400',
-				correct: 'bg-blend-overlay bg-secondary/40',
-				wrong: 'bg-blend-overlay bg-secondary/40',
+				default: '',
+				selected: '',
+				correct: '',
+				wrong: '',
 			},
 			answered: {
 				true: 'animate-button-in fill-mode-[forwards]',
@@ -93,7 +91,12 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 				ref={ref}
 				{...props}
 			>
-				<div className={cn(letterVariant({ variant, answered }))}>
+				{/* <div className={cn(letterVariant({ variant, answered }))}> */}
+				<div
+					className={
+						'flex aspect-square h-full w-auto items-center justify-center rounded-full bg-secondary/40 bg-200% bg-blend-overlay'
+					}
+				>
 					{String.fromCharCode(index + 65)}
 				</div>
 				<p className='text-primary'>{content}</p>
@@ -106,17 +109,26 @@ Button.displayName = 'Button';
 export default function QuizButton({
 	option,
 	index,
+	submitted,
+	selected,
+	setSelected,
 }: {
 	option: QuizOption;
 	index: number;
+	submitted: boolean;
+	selected: boolean;
+	setSelected: (selected: number) => void;
 }) {
 	return (
 		<Button
 			className='gap-2'
-			variant={index == 0 ? 'correct' : index == 3 ? 'wrong' : 'default'}
-			answered={index % 2 == 0}
+			variant={selected ? 'selected' : 'default'}
+			answered={submitted}
 			index={index}
 			content={option.content}
+			onClick={() => {
+				setSelected(index);
+			}}
 		/>
 	);
 }
