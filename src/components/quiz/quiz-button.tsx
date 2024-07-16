@@ -47,10 +47,10 @@ const letterVariant = cva(
 	{
 		variants: {
 			variant: {
-				default: '',
-				selected: '',
-				correct: '',
-				wrong: '',
+				default: 'bg-muted',
+				selected: 'bg-slate-300',
+				correct: 'bg-green-300',
+				wrong: 'bg-red-300',
 			},
 			answered: {
 				true: '',
@@ -82,7 +82,12 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 				className={cn(buttonVariants({ answered, variant, size, className }))}
 				ref={ref}
 				{...props}
-			/>
+			>
+				<div className={cn(letterVariant({ variant, answered }))}>
+					{' '}
+					{String.fromCharCode(index + 65)}
+				</div>
+			</Comp>
 		);
 	},
 );
@@ -103,9 +108,9 @@ export default function QuizButton({
 			answered={index % 2 == 0}
 			index={index}
 		>
-			<div className='flex aspect-square h-full w-auto items-center justify-center rounded-full bg-muted-foreground'>
+			{/* <div className='flex aspect-square h-full w-auto items-center justify-center rounded-full bg-muted-foreground'>
 				{String.fromCharCode(index + 65)}
-			</div>
+			</div> */}
 			{option.content}
 		</Button>
 	);
