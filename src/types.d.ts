@@ -1,6 +1,6 @@
 type QuizQuestion = {
 	question: string;
-	answer: string;
+	answer: number;
 };
 
 type QuizOption = {

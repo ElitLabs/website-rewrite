@@ -9,14 +9,14 @@ const test: QuizContent = {
 		{ content: 'D' },
 	],
 	question: {
-		answer: 'A',
+		answer: 4,
 		question: 'A, B, C, or D?',
 	},
 };
 
 export default function TestPage() {
 	return (
-		<div className='bg-200% bg-pos-half bg-[linear-gradient(to_right,#ef4444_50%,#0000ff_50%)]'>
+		<div className='bg-[linear-gradient(to_right,#ef4444_50%,#0000ff_50%)] bg-200% bg-pos-half'>
 			<ThemeButton />
 
 			<Quiz content={test} />
