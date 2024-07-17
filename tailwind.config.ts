@@ -83,7 +83,7 @@ const config = {
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-				'button-in': 'button-in 0.75s cubic-bezier(1,0,.9,1)',
+				'button-in': 'button-in 0.5s cubic-bezier(1,0,.9,1)',
 			},
 			fontFamily: {
 				quicksand: ['Quicksand', 'sans-serif'],
