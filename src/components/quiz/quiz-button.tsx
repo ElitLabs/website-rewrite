@@ -5,14 +5,16 @@ import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '@/lib/utils';
 
 const buttonVariants = cva(
-	'inline-flex items-center border-2 justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed bg-200%',
+	'inline-flex items-center border-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed bg-200%',
 	{
 		variants: {
 			variant: {
 				default: 'bg-background',
-				selected: 'bg-stone-200 dark:bg-stone-900',
-				correct: 'bg-[linear-gradient(to_right,#22c55e_50%,#e7e5e4_50%)]',
-				wrong: 'bg-[linear-gradient(to_right,#ef4444_50%,#e7e5e4_50%)]',
+				selected: 'bg-stone-100 dark:bg-stone-900',
+				correct:
+					'bg-[linear-gradient(to_right,#22c55e_50%,#f5f5f4_50%)] dark:bg-[linear-gradient(to_right,#22c55e_50%,#1c1917_50%)]',
+				wrong:
+					'bg-[linear-gradient(to_right,#ef4444_50%,#f5f5f4_50%)] dark:bg-[linear-gradient(to_right,#ef4444_50%,#1c1917_50%)]',
 			},
 			size: {
 				default: 'h-10 px-4 py-2',
@@ -65,7 +67,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 				ref={ref}
 				{...props}
 			>
-				<div className='flex aspect-square h-full w-auto items-center justify-center rounded-full bg-secondary/40 bg-200% bg-blend-overlay'>
+				<div className='flex aspect-square h-full w-auto items-center justify-center rounded-full bg-primary/10 bg-200% bg-blend-overlay'>
 					{String.fromCharCode(index + 65)}
 				</div>
 				<p className='text-primary'>{content}</p>

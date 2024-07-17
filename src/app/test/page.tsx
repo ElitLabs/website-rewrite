@@ -3,20 +3,20 @@ import ThemeButton from '@/components/theme-button';
 
 const test: QuizContent = {
 	options: [
-		{ content: 'A' },
-		{ content: 'B' },
-		{ content: 'C' },
-		{ content: 'D' },
+		{ content: 'break' },
+		{ content: 'pass' },
+		{ content: 'continue' },
+		{ content: 'return' },
 	],
 	question: {
-		answer: 4,
-		question: 'A, B, C, or D?',
+		answer: 1,
+		question: 'Which keyword exits a loop without exiting a function?',
 	},
 };
 
 export default function TestPage() {
 	return (
-		<div className='bg-[linear-gradient(to_right,#ef4444_50%,#0000ff_50%)] bg-200% bg-pos-half'>
+		<div className='flex flex-col gap-5 p-10'>
 			<ThemeButton />
 
 			<Quiz content={test} />

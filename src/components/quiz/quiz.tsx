@@ -26,10 +26,7 @@ export default function Quiz({
 		<Card className='max-w-[40dvh]'>
 			<CardHeader>
 				<CardTitle>{question.question}</CardTitle>
-				<CardDescription>
-					{selected}
-					{submitted + ''}
-				</CardDescription>
+				<CardDescription></CardDescription>
 			</CardHeader>
 			<CardContent className='flex w-min flex-col gap-y-1'>
 				{options.map((option, idx) => (
