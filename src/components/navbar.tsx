@@ -14,10 +14,30 @@ import {
 import { useRouter } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import { useState } from 'react';
+import { toast } from 'sonner';
 
 export default function Navbar() {
 	const [open, setOpen] = useState(false);
 	const router = useRouter();
+
+	const ToastClick = () => {
+		toast(
+			<div className='flex flex-col p-2'>
+				<span className='text-base font-normal'>
+					Hello! We are currently working on the on-demand courses.
+				</span>
+				<span className='font-light text-muted-foreground'>
+					If you are a web developer, writer, or video editor, please email us at{' '}
+					<Link href={'mailto:team@elitlabs.com'} className='font-medium'>
+						team@elitlabs.com
+					</Link>
+					.
+				</span>
+			</div>,
+			{ closeButton: true }
+		);
+
+}
 
 	return (
 		<nav className='fixed top-0 w-[100svw] border-b bg-background px-4 py-3 md:px-10'>
@@ -27,22 +47,22 @@ export default function Navbar() {
 				</Link>
 				<div className='flex w-full items-center justify-center'>
 					{/* TODO: Figure out button order */}
-					<Link href={'#'}>
-						<Button variant={'ghost'} className='text-base'>
-							Courses
-						</Button>
-					</Link>
-					<Link href={'/about'}>
-						<Button variant={'ghost'} className='text-base'>
-							About
-						</Button>
-					</Link>
-					<Link href={'/contact'}>
-						<Button variant={'ghost'} className='text-base'>
-							Contact
-						</Button>
-					</Link>
-				</div>
+			  <Link href={'#'}>
+				<Button variant={'ghost'} className='text-base' onClick={ToastClick}>
+				  Courses
+				</Button>
+			  </Link>
+			  <Link href={'/about'}>
+				<Button variant={'ghost'} className='text-base'>
+				  About
+				</Button>
+			  </Link>
+			  <Link href={'/contact'}>
+				<Button variant={'ghost'} className='text-base'>
+				  Contact
+				</Button>
+			  </Link>
+			</div>
 				<div className='flex flex-row items-center justify-end gap-3'>
 					{/* <Avatar className='size-10'>
 						<AvatarImage src='' />
@@ -96,7 +116,7 @@ export default function Navbar() {
 						</div>
 						<nav className='flex h-[90%] flex-col justify-between'>
 							<div className='grid gap-2 py-6'>
-								<MobileLink onOpenChange={setOpen} href='#'>
+								<MobileLink onOpenChange={setOpen} href='/'>
 									Courses
 								</MobileLink>
 								<MobileLink onOpenChange={setOpen} href='/about'>
