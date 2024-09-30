@@ -45,23 +45,23 @@ export default function Navbar() {
 				<Link href='/' className='font-quicksand text-3xl font-bold text-brand'>
 					ElitLabs
 				</Link>
-				<div className='flex w-full items-center justify-center'>
+			<div className='flex w-full items-center justify-center'>
 					{/* TODO: Figure out button order */}
 			  <Link href={'#'}>
-				<Button variant={'ghost'} className='text-base' onClick={ToastClick}>
-				  Courses
-				</Button>
+					<Button variant={'ghost'} className='text-base' onClick={ToastClick}>
+				  		Courses
+					</Button>
 			  </Link>
-			  <Link href={'/about'}>
-				<Button variant={'ghost'} className='text-base'>
-				  About
-				</Button>
+			  	<Link href={'/about'}>
+					<Button variant={'ghost'} className='text-base'>
+				  	About
+					</Button>
 			  </Link>
-			  <Link href={'/contact'}>
-				<Button variant={'ghost'} className='text-base'>
-				  Contact
-				</Button>
-			  </Link>
+			 	 <Link href={'/contact'}>
+					<Button variant={'ghost'} className='text-base'>
+				 	 	Contact
+					</Button>
+			  	</Link>
 			</div>
 				<div className='flex flex-row items-center justify-end gap-3'>
 					{/* <Avatar className='size-10'>
