@@ -14,11 +14,29 @@ import {
 import { useRouter } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import { useState } from 'react';
+import { toast } from 'sonner';
 
 export default function Navbar() {
 	const [open, setOpen] = useState(false);
 	const router = useRouter();
+	const ToastClick = () => {
+		toast(
+			<div className='flex flex-col p-2'>
+				<span className='text-base font-normal'>
+					Hello! We are currently working on the on-demand courses.
+				</span>
+				<span className='font-light text-muted-foreground'>
+					If you are a web developer, writer, or video editor, please email us at{' '}
+					<Link href={'mailto:team@elitlabs.com'} className='font-medium'>
+						team@elitlabs.com
+					</Link>
+					.
+				</span>
+			</div>,
+			{ closeButton: true }
+		);
 
+}
 	return (
 		<nav className='fixed top-0 w-[100svw] border-b bg-background px-4 py-3 md:px-10'>
 			<div className='mx-auto hidden w-full max-w-7xl flex-row items-center justify-between md:flex'>
@@ -28,7 +46,7 @@ export default function Navbar() {
 				<div className='flex w-full items-center justify-center'>
 					{/* TODO: Figure out button order */}
 					<Link href={'#'}>
-						<Button variant={'ghost'} className='text-base'>
+						<Button variant={'ghost'} className='text-base' onClick={ToastClick}>
 							Courses
 						</Button>
 					</Link>
